@@ -1,0 +1,48 @@
+package com.nit.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nit.model.Clark;
+import com.nit.service.IClarkRService;
+
+@RestController
+public class ClarkController {
+
+	@Autowired
+	private IClarkRService iservice;
+//	@PostMapping("/msg")
+//	public String show(@RequestParam String name) {
+//		return "hello my name is "+name;
+//	}
+	
+	@PostMapping("/add")
+	public String add(@RequestBody Clark clark) {
+		String msg=iservice.add(  clark);
+		return "add"+msg;
+	}
+	@PutMapping
+	public String edit(@RequestBody Clark clark) {
+		String msg=iservice.edit( clark);
+		return "update"+msg;
+	}
+	@DeleteMapping
+	public String delete(Integer id) {
+		String msg=iservice.delete(@PathVariable id);
+		return "delete"+msg;
+	}
+	@GetMapping
+	public List<Clark>show(){
+		List<Clark> msg=iservice.showAll();
+		return msg;
+	}
+	
+	
+}

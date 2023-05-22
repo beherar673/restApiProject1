@@ -1,0 +1,39 @@
+package com.nit.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nit.model.Clark;
+import com.nit.service.IClarkRService;
+
+@RestController
+public class ClarkController {
+
+	@Autowired
+	private IClarkRService iservice;
+//	@PostMapping("/msg")
+//	public String show(@RequestParam String name) {
+//		return "hello my name is "+name;
+//	}
+	
+	public String add(Clark clark) {
+		String msg=iservice.add(clark);
+		return "add"+msg;
+	}
+	public String edit(Clark clark) {
+		String msg=iservice.edit(clark);
+		return "update"+msg;
+	}
+	public String delete(Integer id) {
+		String msg=iservice.delete(id);
+		return "delete"+msg;
+	}
+	public List<Clark>show(){
+		List<Clark> msg=iservice.showAll();
+		return msg;
+	}
+	
+	
+}

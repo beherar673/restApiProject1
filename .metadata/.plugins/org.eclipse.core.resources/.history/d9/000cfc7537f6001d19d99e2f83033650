@@ -1,0 +1,3 @@
+#Embeded Tomcat serverf port
+
+server.port=3425

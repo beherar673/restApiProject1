@@ -1,0 +1,9 @@
+package com.nit.model;
+
+public class Clark {
+
+	private Integer id;
+	private String name;
+	private Double bal;
+	
+}

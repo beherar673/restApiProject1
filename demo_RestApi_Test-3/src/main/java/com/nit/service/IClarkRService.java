@@ -1,0 +1,16 @@
+package com.nit.service;
+
+import java.util.List;
+
+import com.nit.model.Clark;
+
+public interface IClarkRService {
+	
+	public String add(Clark clark);
+	
+	public String edit(Clark clark);
+	
+	public String delete(Integer id);
+	
+	public List<Clark> showAll();
+}

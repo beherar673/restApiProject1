@@ -1,0 +1,7 @@
+#Embeded Tomcat serverf port
+
+server.port=3425
+
+#web Application contextPath (in Embedded Server)
+
+server.servlet.contextPath=/ACTOR-API

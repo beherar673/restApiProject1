@@ -1,0 +1,18 @@
+package com.nit.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nit.service.IClarkRService;
+
+@RestController
+public class ClarkController {
+
+	@Autowired
+	private IClarkRService iservice;
+	@PostMapping("/msg")
+	public String show(@RequestParam String name) {
+		return "hello my name is "+name;
+	}
+}
